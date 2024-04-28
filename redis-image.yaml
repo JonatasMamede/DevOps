@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-enterprise-operator
+spec:
+  selector:
+    matchLabels:
+      name: redis-enterprise-operator
+      app: notification
+  template:
+    metadata:
+      labels:
+        name: redis-enterprise-operator
+        app: notification
+    spec:
+      serviceAccountName: redis-enterprise-operator
+      containers:
+        - name: redis-enterprise-operator
+          image: gcr.io/yourproject/redislabs/operator:7.2.4-7
