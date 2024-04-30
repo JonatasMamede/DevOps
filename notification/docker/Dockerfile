@@ -1,4 +1,4 @@
-FROM ubuntu:23.10
+FROM nginx
 WORKDIR /app
 COPY notification-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8085
