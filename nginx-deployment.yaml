@@ -18,6 +18,10 @@ spec:
                   image: nginx
                   readinessProbe:
                     httpGet:
-                        path: /health
+                        path: actuator/health
+                        port: 8085
+                  livenessProbe:
+                    httpGet:
+                        path: actuator/health
                         port: 8085
                   
